@@ -28,10 +28,10 @@ async def command_start(message: types.Message):
 async def bot_message(message: types.Message):
     if message.text == "Информация о COVID-19":
         await bot.send_message(message.from_user.id, "Информация о COVID-19", reply_markup=nav.otherMenu2)
-    elif message.text == "Сколько зараженных на данный момент":
-        await bot.send_message(message.from_user.id, f'Заражено на данный момент {ps.parser()}')
+    elif message.text == "Сколько людей заражено за сегодня":
+        await bot.send_message(message.from_user.id, f'Сегодня заразились {ps.parser()} человек.')
     elif message.text == "Узнать прогноз":
-        await bot.send_message(message.from_user.id, "Введите название города ")
+        await bot.send_message(message.from_user.id, "Какой город вас интересует?")
     elif message.text == "Интересное о COVID-19":
         await bot.send_message(message.from_user.id, "Интересное о COVID-19", reply_markup=nav.otherMenu)
     elif message.text == "Факты о COVID-19":

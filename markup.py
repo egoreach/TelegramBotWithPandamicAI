@@ -14,8 +14,8 @@ otherMenu = ReplyKeyboardMarkup(resize_keyboard=True).add(btn_fact, btn_zar, btn
 
 
 btn_prod = KeyboardButton('Узнать прогноз')
-btn_kol = KeyboardButton('Сколько зараженных на данный момент')
-otherMenu2 = ReplyKeyboardMarkup(resize_keyboard=True).add(btn_prod, btn_kol, btn_back)
+btn_kol = KeyboardButton('Сколько людей заражено за сегодня')
+otherMenu2 = ReplyKeyboardMarkup(resize_keyboard=True).row(btn_prod).add(btn_kol)
 
 
 btn_cip = KeyboardButton('Симптомы')
