@@ -1,0 +1,6 @@
+pandas
+catboost
+aiogram
+bs4
+lxml
+requests

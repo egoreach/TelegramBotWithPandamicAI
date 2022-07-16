@@ -1,12 +1,15 @@
-import asyncio
-import logging
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
-import config
+
+import asyncio
+import logging
+
 import markup as nav
 import readtxt as rt
 import pars as ps
+import config
+
 from ai import get_city_prediction
 
 
@@ -26,7 +29,7 @@ async def bot_message(message: types.Message):
     if message.text == "Информация о COVID-19":
         await bot.send_message(message.from_user.id, "Информация о COVID-19", reply_markup=nav.otherMenu2)
     elif message.text == "Сколько зараженных на данный момент":
-        await bot.send_message(message.from_user.id, f'Зараженно на данный момент {ps.parser()}')
+        await bot.send_message(message.from_user.id, f'Заражено на данный момент {ps.parser()}')
     elif message.text == "Узнать прогноз":
         await bot.send_message(message.from_user.id, "Введите название города ")
     elif message.text == "Интересное о COVID-19":
@@ -83,7 +86,7 @@ async def bot_message(message: types.Message):
                                  f"{real} - показатель из размеченных профессионалами данных. \n"
                                  f"Погрешность составила {miss}.")
         except:
-            await message.reply("Такого города нет в нашей базе:(")
+            await message.reply("Такого города нет в нашей базе.")
 
 
 if __name__ == '__main__':
