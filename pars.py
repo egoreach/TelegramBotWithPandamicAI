@@ -12,4 +12,4 @@ def parser() -> str:
     soup = BeautifulSoup(req.text, 'lxml')
     chis = soup.find_all('div', class_='cv-countdown__item-value _accent')
 
-    return chis[1][0].text
+    return chis[1].text
